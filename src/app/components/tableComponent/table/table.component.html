@@ -1,0 +1,28 @@
+<div class="table-wrapper">
+    <app-pagination 
+    class="table-pagination" 
+    [page]="page" 
+    [perPage]="perPage" 
+    [totalItems]="items.length" 
+    (onPageChanged)="onPageChanged($event)">
+    </app-pagination>  
+    <table class="table">
+        <thead class="table-headers">
+            <tr class="table-headers-row">
+                <th *ngFor="let column of columns">
+                    {{ column.title }}
+                </th>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+            <tr *ngIf="!items.length" class="no-data">
+                {{ noDataMsg }}
+            </tr>
+            <tr *ngFor="let item of itemsToDisplay">
+                <td *ngFor="let column of columns" [class]="column.type">
+                    {{ item[column.key] }}
+                </td>
+            <tr>
+        </tbody>
+    </table>
+</div>

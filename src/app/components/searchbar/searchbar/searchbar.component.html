@@ -1,0 +1,8 @@
+<div class="searchbar">
+    <input 
+    type="text" 
+    [attr.disabled]="shouldBeDisabled ? '' : null" 
+    [placeholder]="placeholder" 
+    [value]="searchStr" 
+    (input)="onChange($event)">
+</div>

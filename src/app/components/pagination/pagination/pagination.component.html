@@ -1,0 +1,31 @@
+<div *ngIf="totalItems > perPage" class="pagination" (click)="onPaginationClicked()">
+    <button 
+    class="first" 
+    title="First" 
+    [attr.disabled]="page == 1 ? '' : null" 
+    (click)="onFirstClicked()">
+        <<
+    </button>
+    <button 
+    class="previuos"
+    title="Previous"
+    [attr.disabled]="page == 1 ? '' : null" 
+    (click)="onPreviousClicked()">
+        <
+    </button>
+    <button class="count">{{ page }}/{{ totalPages }}</button>
+    <button 
+    class="next" 
+    title="Next" 
+    [attr.disabled]="page == totalPages ? '' : null" 
+    (click)="onNextClicked()">
+        >
+    </button>
+    <button 
+    class="last" 
+    title="Last" 
+    [attr.disabled]="page == totalPages ? '' : null" 
+    (click)="onLastClicked()">
+        >>
+    </button>
+</div>

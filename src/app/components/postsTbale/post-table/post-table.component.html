@@ -1,0 +1,14 @@
+<div class="posts-table">
+    <app-searchbar 
+    [searchStr]="searchStr" 
+    [shouldBeDisabled]="!posts.length" 
+    (searchStrChanged)="onChange($event)">
+    </app-searchbar>
+    <app-table 
+    [columns]="columns" 
+    [items]="postsToDisplay()" 
+    [page]="page" 
+    [noDataMsg]="noDataMsg" 
+    (onPageNumberChanged)="onPageChanged($event)">
+    </app-table>
+</div>
